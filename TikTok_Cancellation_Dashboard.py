@@ -571,7 +571,7 @@ def build_instant_analysis(
         .groupby(
             "Bulan",
             observed=True
-        )["Subtotal Pesanan"]
+        )["SKU Subtotal After Discount"]
         .sum()
         .reindex(
             months,
