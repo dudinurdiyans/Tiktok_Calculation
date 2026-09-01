@@ -824,7 +824,7 @@ period_label = " | ".join(
 # ------------------------------------------------------------
 
 all_shipping_options = (
-    data_l3m["Opsi Pengiriman"]
+    data_l3m["Delivery Option"]
     .dropna()
     .drop_duplicates()
     .tolist()
