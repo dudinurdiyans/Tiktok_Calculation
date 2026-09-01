@@ -42,14 +42,6 @@ MONEY_COLUMNS = [
     "Order Amount",
 ]
 
-for col in MONEY_COLUMNS:
-    if col in df.columns:
-        df[col] = pd.to_numeric(
-            df[col],
-            errors="coerce"
-        ).fillna(0)
-
-
 # ============================================================
 # HELPERS
 # ============================================================
