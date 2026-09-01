@@ -904,13 +904,19 @@ with st.expander(
         .astype(str)
     )
 
-    st.dataframe(
-        month_check.style.format({
-            "Omzet": "Rp {:,.0f}"
-        }),
-        use_container_width=True,
-        hide_index=True
-    )
+    # Pastikan kolom Omzet benar-benar numerik
+month_check["Omzet"] = pd.to_numeric(
+    month_check["Omzet"],
+    errors="coerce"
+).fillna(0)
+
+st.dataframe(
+    month_check.style.format({
+        "Omzet": "Rp {:,.0f}"
+    }),
+    use_container_width=True,
+    hide_index=True
+)
 
 # ============================================================
 # RINGKASAN
