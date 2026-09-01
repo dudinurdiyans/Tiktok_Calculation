@@ -26,6 +26,7 @@ MONEY_COLUMNS = [
     "SKU Subtotal Before Discount",
     "SKU Platform Discount",
     "SKU Seller Discount",
+    "SKU Subtotal After Discount",
     "Shipping Fee After Discount",
     "Original Shipping Fee",
     "Shipping Fee Seller Discount",
@@ -39,8 +40,14 @@ MONEY_COLUMNS = [
     "Shipping Insurance",
     "Item Insurance",
     "Order Amount",
-    
 ]
+
+for col in MONEY_COLUMNS:
+    if col in df.columns:
+        df[col] = pd.to_numeric(
+            df[col],
+            errors="coerce"
+        ).fillna(0)
 
 
 # ============================================================
