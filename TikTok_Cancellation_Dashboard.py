@@ -605,7 +605,7 @@ def build_instant_analysis(
     )
 
     cancel_data = instant[
-        instant["Is Batal"]
+        instant["Is Dibatalkan"]
     ].copy()
 
     cancel_data[
